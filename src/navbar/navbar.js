@@ -1,32 +1,48 @@
 
- //import logos from "./logos/img/Loogo.jpg";
-function NavBar (props) {
-    const {img} = props
- return (    
+function NavBar(props) {
 
-  <nav className= "hero is-info">
-<section>
-<figure>
-            <img src={img} alt="logos"/>
-        </figure>
+    const { img } = props
 
-<div className="container is-fluid max-width  ">
-    <div className="column is-4">
-        
-        <h2 class="container is-max-desktop max-width columns is-mobile" role="navigation" aria-label="main navigation"> Isosceles Negocios Inmobiliarios</h2>
-    </div>
-</div>
-</section>
-<ul className=".container.is-max-desktop max-width">
-    <li className="button is-danger">  Inicio</li>
-    <li className="button is-danger">  Porpiedades</li>
-    <li className="button is-danger">  Alquileres</li>
-    <li className="button is-danger">  Contacto</li>
+    return (
 
-</ul>
-     
-    </nav>
+        <section className="conteiner hero is-info">
+            <div className="columns hero-body">
+                <div className="column is-4">
+                    <figure className="image is-128x128">
+                        <img src={img} alt="LOGO" />
+                    </figure>
+                </div>
+
+                <div className="column is-6">
+                <div className="columns is-2">
+                    <div className="column ">
+                        <h2 className= "title block"role="navigation" aria-label="main navigation"> Isosceles Negocios Inmobiliarios</h2>
+                    </div>
+                </div>
+
+                    <nav>
+                        <ul className="columns">
+                            <li className="column is-2">
+                                <a className="button is-fullwidth is-danger" href="www.google.com">Inicio</a>
+                            </li>
+                            <li className="column is-2">
+                                <a className="button is-fullwidth is-danger" href="www.google.com">Porpiedades</a>
+                            </li>
+                            <li className="column is-2">
+                                <a className="button is-fullwidth is-danger" href="www.google.com">Alquileres</a>
+                            </li>
+                            <li className="column is-2">
+                                <a className="button is-fullwidth is-danger" href="www.google.com">Contacto</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+
+              
+            </div>
+
+        </section>
     )
 }
- 
-export default NavBar
+
+export default NavBar;

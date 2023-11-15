@@ -3,12 +3,11 @@ import React from "react";
 
 import reactDOM from "react-dom/client";
 
-import "./app"
-
+import App from "./App";
 
 const el = document.getElementById("root");
 
 const root = reactDOM.createRoot(el);
 
 
-root.render(<app/>)
+root.render(< App/>)

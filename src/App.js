@@ -1,19 +1,16 @@
-
-
 import "bulma/css/bulma.css";
-import logos from "./logos/img/Loogo.jpg";
+import Logo from "./img/Loogo.jpg"
 import NavBar from "./navbar/navbar";
 
 
-function app(){
+function app() {
     return (
-        
 
-        <div className=".container.is-max-desktop " >
-           
-            <NavBar img={logos}/>
+
+        <div>
+            <NavBar img={Logo} />
         </div>
     );
 }
 
-export default app
+export default app;
