@@ -1,4 +1,4 @@
-import CartWidget from "./CartWidgetartWidget";
+import CartWidget from "../CartWidget";
 
 function NavBar(props) {
 
