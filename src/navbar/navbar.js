@@ -1,3 +1,4 @@
+import CartWidget from "./CartWidgetartWidget";
 
 function NavBar(props) {
 
@@ -37,7 +38,9 @@ function NavBar(props) {
                         </ul>
                     </nav>
                 </div>
-
+                <div className="column is-1">
+                    <CartWidget />
+                </div>
               
             </div>
 

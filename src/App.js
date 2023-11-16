@@ -1,6 +1,7 @@
 import "bulma/css/bulma.css";
 import Logo from "./img/Loogo.jpg"
 import NavBar from "./navbar/navbar";
+import ItemListContainer from "./ItemListContainer";
 
 
 function app() {
@@ -9,6 +10,7 @@ function app() {
 
         <div>
             <NavBar img={Logo} />
+            <ItemListContainer/>
         </div>
     );
 }
