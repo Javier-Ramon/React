@@ -21,8 +21,9 @@ function NavBar(props) {
                     </div>
                 </div>
 
-                    <nav>
-                        <ul className="columns ">
+                    <nav className=" is-centered">
+                        <div>
+                        <ul className="columns is-active">
                             <li className="column is-2">
                                 <a className="button is-fullwidth is-danger" href="www.google.com">Inicio</a>
                             </li>
@@ -36,7 +37,9 @@ function NavBar(props) {
                                 <a className="button is-fullwidth is-danger" href="www.google.com">Contacto</a>
                             </li>
                         </ul>
+                        </div>
                     </nav>
+                   
                 </div>
                 <div className="column is-1">
                     <CartWidget />
