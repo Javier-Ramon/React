@@ -1,4 +1,5 @@
 import { PiShoppingCartLight } from "react-icons/pi"
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function CartWidget () {
     return ( 
