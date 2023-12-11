@@ -20,9 +20,8 @@ const Item = ({ id, name, img, price, stock }) => {
                     Stock disponible: ${stock}
                 </p>
             </section>
-            <footer className='ItemFooter'>
-                <Link to={'/item/${id}'} className='Option'>Ver detalle  </Link>
-            </footer>
+          
         </article>
     )
 }
+export default Item
