@@ -1,0 +1,19 @@
+
+.CardItem {
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin: 10px;
+  text-align: center;
+}
+img{
+  width: 80%;
+display: flex;
+}
+.ItemImg {
+  width: 50%;
+  height: auto;
+}
+
+.Info {
+  margin-top: 10px;
+}

@@ -1,73 +1,64 @@
+
+
+import React from 'react';
+import { Link, NavLink } from 'react-router-dom';  
 import './navbar.css';
-import CartWidget from "../CartWidget";
-import {NavLink, Link } from 'react-router-dom'
+import CartWidget from '../CartWidget';
 
+function NavBar(props) {
+  const { img } = props;
 
-/*function NavBar(props) {
+  return (
+    <section className="container hero is-info">
+      <div className="columns hero-body">
+        <div className=" image column is-1">
+          <figure className="image is-20%">
+            <img src={img} alt="LOGO" />
+          </figure>
+        </div>
 
-    const { img } = props
-
-    return (
-
-        <section className="conteiner hero is-info">
-            <div className="columns hero-body">
-                <div className="column is-3">
-                    <figure className="image is-128x128">
-                        <img src={img} alt="LOGO" />
-                    </figure>
-                </div>
-
-                <div className="column is-6">
-                <div className="columns is-2">
-                    <div className="column is-centered">
-                        <h2 className= "title block"role="navigation" aria-label="main navigation"> Isosceles Negocios Inmobiliarios</h2>
-                    </div>
-                </div>
-
-                    <nav className=" is-centered">
-                        <div>
-                        <ul className="columns is-active">
-                            <li className="column is-2">
-                                <a className="button is-fullwidth is-danger" href="www.google.com">Inicio</a>
-                            </li>
-                            <li className="column is-3 large">
-                                <a className="button is-fullwidth is-danger" href="www.google.com">Porpiedades</a>
-                            </li>
-                            <li className="column is-2">
-                                <a className="button is-fullwidth is-danger" href="www.google.com">Alquileres</a>
-                            </li>
-                            <li className="column is-2">
-                                <a className="button is-fullwidth is-danger" href="www.google.com">Contacto</a>
-                            </li>
-                        </ul>
-                        </div>
-                    </nav>
-                   
-                </div>
-                <div className="column is-1">
-                    <CartWidget />
-                </div>
-              
+        <div className="column is-6">
+          <div className="columns is-2">
+            <div className="title column is-centered">
+              <h2 className="title block is-centered" role="navigation" aria-label="main navigation">
+                Bienvenidos !!!
+              </h2>
             </div>
+          </div>
 
-        </section>
-    )
-}*/ 
-
-const NavBar =() => {
-    return (
-        <nav className='NavBar'>
+          <nav className='NavBars'>
+            <div className='Nav'>
             <Link to='/'>
-                <h3>Ecommerce</h3>
+              <h1> Bienvenidos a Jr Informatica</h1>
             </Link>
-            <div className='Categories'>
-                <NavLink to= {'/category/celular'} className={({isActive}) => isActive ?  'ActiveOption' : 'Option'}/>
-                <NavLink to= {'/category/tablet'} className={({isActive}) => isActive ?  'ActiveOption' : 'Option'}/>
-                <NavLink to= {'/category/notebook'} className={({isActive}) => isActive ?  'ActiveOption' : 'Option'}/>
-
             </div>
-        </nav>
-    )
+            <section className='Categories'>
+            <div className='Categorie'>
+              <NavLink to='/category/celular' activeClassName='ActiveOption' className='Option'>
+                Celulares
+              </NavLink>
+              </div>
+              <div className='Categorie'>
+              <NavLink to='/category/tablet' activeClassName='ActiveOption' className='Option'>
+                Tablets
+              </NavLink>
+              </div>
+              <div className='Categorie'>
+              <NavLink to='/category/Notebooks' activeClassName='ActiveOption' className='Option'>
+                Notebooks
+              </NavLink>
+            </div>
+            </section>
+          </nav>
+        </div>
+        <div className=" CardWidget">
+        <div className="  column is-1">
+          <CartWidget />
+        </div>
+        </div>
+      </div>
+    </section>
+  );
 }
 
 export default NavBar;

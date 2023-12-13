@@ -1,44 +1,35 @@
-import { useState, useEffect } from 'react';
-import { getProducts } from './asyncMock';
+
+import React, { useState, useEffect } from 'react';
+import { getProducts } from './asynMock/asyncMock';
+import { getProductsByCategory } from './asynMock/asyncMock';
 import ItemList from './ItemList/ItemList';
 import { useParams } from 'react-router-dom';
-
-/*function ItemListContainer(){
-
-    return (
-        <div className="columns is-centered">
-                <div className="  is-offeset-4 is-fullwidth ">
-                    <h1 className="title column is-active">Bienvenidos </h1>
-                </div>
-        </div>
-    )
-}*/
+import "./ItemListContainer.css";
 
 const ItemListContainer = ({ greeting }) => {
-    const [products, setPoducts,  getProductsByCategory] = useState([])
+  const [products, setProducts] = useState([]);
+  const { categoryId } = useParams();
 
-    const { categoryId } = useParams()
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = categoryId ? await getProductsByCategory(categoryId) : await getProducts();
+        setProducts(response);
+      } catch (error) {
+        console.error(error);
+      }
+    };
 
-    useEffect(() => {
-        const asyncFunc = categoryId ? getProductsByCategory : getProducts
-        asyncFunc(categoryId)
-            .then(response => {
-                setPoducts(response)
-            })
-            .catch(error => {
-                console.error(error)
-            })
+    fetchData();
+  }, [categoryId]);
 
-    }, [categoryId])
+  return (
+    <div>
+      <h1>{greeting}</h1>
+      <ItemList products={products} />
+    </div>
+  );
+};
 
-    return (
-        <div>
-            <h1> {greeting} </h1>
-            <ItemList products={products} />
-        </div>
-    )
+export default ItemListContainer;
 
-
-}
-
-export default ItemListContainer
