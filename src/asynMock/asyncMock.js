@@ -32,7 +32,7 @@ const products = [
       name: 'Notebooks',
       price: 250000,
       category: 'Notebooks',
-      img: 'https://mla-s1-p.mlstatic.com/677172-MLA48635279078_122021-F.jpg',
+      img: 'https://mla-s1-p.mlstatic.com/649005-MLA42714206772_072020-F.jpg',
       stock: 5,
       description: 'Notebooks',
     },

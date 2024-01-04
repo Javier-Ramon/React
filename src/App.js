@@ -5,7 +5,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Logo from './img/Loogo.jpg';
 import NavBar from './navbar/navbar';
-import ItemListContainer from './ItemListContainer';
+import ItemListContainer from './ItemListContainer/ItemListContainer';
 import ItemDetailContainer from './ItemDetailContainer/ItemDetailContainer';
 import './styles.css';
 

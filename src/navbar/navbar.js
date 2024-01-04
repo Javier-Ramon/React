@@ -11,20 +11,14 @@ function NavBar(props) {
   return (
     <section className="container hero is-info">
       <div className="columns hero-body">
-        <div className=" image column is-1">
-          <figure className="image is-20%">
+        <div className=" Logo image column is-4">
+          <figure className="image is-50%">
             <img src={img} alt="LOGO" />
           </figure>
         </div>
 
         <div className="column is-6">
-          <div className="columns is-2">
-            <div className="title column is-centered">
-              <h2 className="title block is-centered" role="navigation" aria-label="main navigation">
-                Bienvenidos !!!
-              </h2>
-            </div>
-          </div>
+         
 
           <nav className='NavBars'>
             <div className='Nav'>
@@ -48,14 +42,15 @@ function NavBar(props) {
                 Notebooks
               </NavLink>
             </div>
-            </section>
-          </nav>
-        </div>
-        <div className=" CardWidget">
-        <div className="  column is-1">
+            <div className=" CardWidget">
+        <div className="  column is-2">
           <CartWidget />
         </div>
         </div>
+            </section>
+          </nav>
+        </div>
+       
       </div>
     </section>
   );
