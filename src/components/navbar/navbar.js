@@ -3,7 +3,7 @@
 import React from 'react';
 import { Link, NavLink } from 'react-router-dom';  
 import './navbar.css';
-import CartWidget from '../CartWidget';
+import CartWidget from '../CartWidget/CartWidget';
 
 function NavBar(props) {
   const { img } = props;
