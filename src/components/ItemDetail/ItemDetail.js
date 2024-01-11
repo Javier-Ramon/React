@@ -3,7 +3,8 @@ import React from 'react';
 import { useState, Link } from 'react';
 import './ItemDetail.css';
 import ItemCount from '../ItemCount/ItemCount';
-import { CartContext, useContext } from '../context/CartContext';
+import { CartContext } from '../../components/context/CartContext';
+import { useContext } from "react"
 
 const ItemDetail = ({ id, name, img, category, description, price, stock }) => {
   const [quantityAdded, setQuantityAdded] = useState(0)

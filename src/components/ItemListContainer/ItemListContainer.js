@@ -4,32 +4,48 @@ import { getProducts } from '../asynMock/asyncMock';
 import { getProductsByCategory } from '../asynMock/asyncMock';
 import ItemList from '../ItemList/ItemList';
 import { useParams } from 'react-router-dom';
+import { getDocs, collection, query, where } from 'firebase/firestore';
+import { db } from '../../components/service/firebase/firebaseConfig';
+
 import "./ItemListContainer.css";
 
-const ItemListContainer = ({ greeting }) => {
-  const [products, setProducts] = useState([]);
-  const { categoryId } = useParams();
+const ItemListContainer = ({ mensaje }) => {
+  const [productos, setProductos] = useState([])
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = categoryId ? await getProductsByCategory(categoryId) : await getProducts();
-        setProducts(response);
-      } catch (error) {
-        console.error(error);
-      }
-    };
+  const {categoriaId}= useParams()
 
-    fetchData();
-  }, [categoryId]);
+  useEffect(() =>{
+     
 
-  return (
-    <div>
-      <h1>{greeting}</h1>
-      <ItemList products={products} />
-    </div>
-  );
-};
+      const collectionRef = categoriaId
+          ? query(collection(db, "Items"),where("categoria", "==",categoriaId ))
+          : collection(db, "Items")
 
-export default ItemListContainer;
+      getDocs(collectionRef)
+          .then(Response=>{
+              const productosAdaptados = Response.docs.map(doc=>{
+                  const data = doc.data()
+                  return { id:doc.id, ...data }
+              })
+              setProductos(productosAdaptados)
+          })
+          .catch(error=>{
+              console.log(error)
+          })
+          
+  }, [categoriaId])
 
+
+  return(
+     <div>
+      <h2>{mensaje}</h2>
+      <ItemList productos={productos}/>
+     </div> 
+     
+     
+  )
+  
+}
+
+
+export default ItemListContainer
