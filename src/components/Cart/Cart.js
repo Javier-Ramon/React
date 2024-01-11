@@ -5,8 +5,9 @@ import CartItem from '../CartItem/CartItem';
 import { Link } from 'react-router-dom';
 
 
-const Cart= ()=> {
+const cart = () =>{
     const  { cart, clearCart, totalCantidad, totalPrecio } = useContext(CartContext)
+
     if(totalCantidad() === 0 ){
         return(
             <div>
@@ -27,4 +28,4 @@ const Cart= ()=> {
 
 }
 
-export default Cart;
+export default cart

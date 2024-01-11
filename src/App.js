@@ -7,9 +7,9 @@ import Logo from './components/img/Loogo.jpg';
 import NavBar from './components/navbar/navbar';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
-import {CartProvider } from '../../clase1/src/components/Cart/Cart';
+import {CartProvider } from '../../clase1/src/components/context/CartContext';
 import Cart from '../../clase1/src/components/Cart/Cart';
-import Checkout from './components/Checkout/Checkout'
+import Checkout from './components/Checkout/Checkout';
 import './styles.css';
 
 
